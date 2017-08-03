@@ -15,11 +15,11 @@ public:
     virtual void onEnter() override;
     virtual void onExit()override;
 
-    void restartCallback(Ref* sender);
-    void nextCallback(Ref* sender);
-    void backCallback(Ref* sender);
+    void restartCallback(Ref* sender) override;
+    void nextCallback(Ref* sender) override;
+    void backCallback(Ref* sender) override;
 
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event);
+    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
 };
 
 class TileMapTestNew : public TileDemoNew
@@ -162,7 +162,7 @@ public:
     TMXIsoZorderNew(void);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    virtual void onExit(void);
+    virtual void onExit(void) override;
 
     ~TMXIsoZorderNew();
     void repositionSprite(float dt);

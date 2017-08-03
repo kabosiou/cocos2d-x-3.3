@@ -56,18 +56,18 @@ public:
     Camera3DTestDemo(void);
     virtual ~Camera3DTestDemo(void);
     
-    void restartCallback(Ref* sender);
-    void nextCallback(Ref* sender);
-    void backCallback(Ref* sender);
+    void restartCallback(Ref* sender) override;
+    void nextCallback(Ref* sender) override;
+    void backCallback(Ref* sender) override;
     virtual void onEnter() override;
     virtual void onExit() override;
     // overrides
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     void addNewSpriteWithCoords(Vec3 p,std::string fileName,bool playAnimation=false,float scale=1.0f,bool bindCamera=false);
-    void onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event);
-    void onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Event  *event);
-    void onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event);
+    void onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
+    void onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
+    void onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
     void scaleCameraCallback(Ref* sender,float value);
     void rotateCameraCallback(Ref* sender,float value);
     void SwitchViewCallback(Ref* sender,CameraType cameraType);

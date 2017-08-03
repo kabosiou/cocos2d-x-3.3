@@ -34,28 +34,28 @@ class ParticlePerformTest1 : public ParticleMainScene
 {
 public:
     virtual std::string title() const override;
-    virtual void doTest();
+    virtual void doTest() override;
 };
 
 class ParticlePerformTest2 : public ParticleMainScene
 {
 public:
     virtual std::string title() const override;
-    virtual void doTest();
+    virtual void doTest() override;
 };
 
 class ParticlePerformTest3 : public ParticleMainScene
 {
 public:
     virtual std::string title() const override;
-    virtual void doTest();
+    virtual void doTest() override;
 };
 
 class ParticlePerformTest4 : public ParticleMainScene
 {
 public:
     virtual std::string title() const override;
-    virtual void doTest();
+    virtual void doTest() override;
 };
 
 void runParticleTest();

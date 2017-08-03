@@ -71,12 +71,12 @@ public:
 	LoadSceneEdtiorFileTest();
 	~LoadSceneEdtiorFileTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 
@@ -86,13 +86,13 @@ public:
 	SpriteComponentTest();
 	~SpriteComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class ArmatureComponentTest : public SceneEditorTestLayer
@@ -101,13 +101,13 @@ public:
 	ArmatureComponentTest();
 	~ArmatureComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class UIComponentTest : public SceneEditorTestLayer
@@ -116,13 +116,13 @@ public:
 	UIComponentTest();
 	~UIComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 	void touchEvent(cocos2d::Ref *pSender, ui::Widget::TouchEventType type);
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class TmxMapComponentTest : public SceneEditorTestLayer
@@ -131,12 +131,12 @@ public:
 	TmxMapComponentTest();
 	~TmxMapComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 
 };
 
@@ -146,12 +146,12 @@ public:
 	ParticleComponentTest();
 	~ParticleComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 protected:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class EffectComponentTest : public SceneEditorTestLayer
@@ -160,13 +160,13 @@ public:
 	EffectComponentTest();
 	~EffectComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
     void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const std::string& movementID);
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 	
 };
 
@@ -176,12 +176,12 @@ public:
 	BackgroundComponentTest();
 	~BackgroundComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class AttributeComponentTest : public SceneEditorTestLayer
@@ -190,14 +190,14 @@ public:
 	AttributeComponentTest();
 	~AttributeComponentTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
 	virtual void onEnter() override;
     virtual void onExit() override;
 	bool initData();
     cocos2d::Node* createGameScene();
     
 private:
-	void defaultPlay();
+	void defaultPlay() override;
 };
 
 class TriggerTest : public SceneEditorTestLayer
@@ -206,15 +206,15 @@ public:
 	TriggerTest();
 	~TriggerTest();
 
-    virtual std::string title();
+    virtual std::string title() override;
     virtual void onEnter() override;
     virtual void onExit() override;
     
 	// default implements are used to call script callback if exist
-	virtual bool onTouchBegan(Touch *touch, Event *unused_event); 
-    virtual void onTouchMoved(Touch *touch, Event *unused_event); 
-    virtual void onTouchEnded(Touch *touch, Event *unused_event); 
-    virtual void onTouchCancelled(Touch *touch, Event *unused_event);
+	virtual bool onTouchBegan(Touch *touch, Event *unused_event) override;
+    virtual void onTouchMoved(Touch *touch, Event *unused_event) override;
+    virtual void onTouchEnded(Touch *touch, Event *unused_event) override;
+    virtual void onTouchCancelled(Touch *touch, Event *unused_event) override;
 
 	// update of game
 	void gameLogic(float dt);
@@ -223,7 +223,7 @@ public:
     cocos2d::Node* createGameScene();
   
 private:
-    void defaultPlay();
+    void defaultPlay() override;
 
     cocos2d::EventListener* _touchListener;
 };

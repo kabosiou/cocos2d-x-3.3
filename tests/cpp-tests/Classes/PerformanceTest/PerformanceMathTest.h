@@ -16,11 +16,11 @@ public:
     }
     
     virtual void onEnter() override;
-    virtual void restartCallback(Ref* sender);
-    virtual void nextCallback(Ref* sender);
-    virtual void backCallback(Ref* sender);
+    virtual void restartCallback(Ref* sender) override;
+    virtual void nextCallback(Ref* sender) override;
+    virtual void backCallback(Ref* sender) override;
     
-    virtual void showCurrentTest() {}
+    virtual void showCurrentTest() override {}
     
     virtual std::string title() const { return "Math Performance Test"; }
     virtual std::string subtitle() const { return "PerformanceMathLayer subTitle"; }
@@ -49,7 +49,7 @@ public:
     
     virtual void doPerformanceTest(float dt) override;
     
-    virtual std::string subtitle() const { return "Mat4 * Mat4"; }
+    virtual std::string subtitle() const override { return "Mat4 * Mat4"; }
 private:
 };
 
@@ -64,7 +64,7 @@ public:
     
     virtual void doPerformanceTest(float dt) override;
     
-    virtual std::string subtitle() const { return "Mat4 TransformVec4"; }
+    virtual std::string subtitle() const override { return "Mat4 TransformVec4"; }
     
 };
 

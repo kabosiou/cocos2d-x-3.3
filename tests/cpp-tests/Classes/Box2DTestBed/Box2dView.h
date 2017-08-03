@@ -45,12 +45,12 @@ public:
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
 
 //    virtual void registerWithTouchDispatcher();
-    bool onTouchBegan(Touch* touch, Event* event);
-    void onTouchMoved(Touch* touch, Event* event);
-    void onTouchEnded(Touch* touch, Event* event);
+    bool onTouchBegan(Touch* touch, Event* event) override;
+    void onTouchMoved(Touch* touch, Event* event) override;
+    void onTouchEnded(Touch* touch, Event* event) override;
     
-    void onKeyPressed(EventKeyboard::KeyCode code, Event* event);
-    void onKeyReleased(EventKeyboard::KeyCode code, Event* event);
+    void onKeyPressed(EventKeyboard::KeyCode code, Event* event) override;
+    void onKeyReleased(EventKeyboard::KeyCode code, Event* event) override;
     //virtual void accelerometer(UIAccelerometer* accelerometer, Acceleration* acceleration);
 
     static Box2DView* viewWithEntryID(int entryId);

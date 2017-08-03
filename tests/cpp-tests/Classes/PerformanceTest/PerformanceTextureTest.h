@@ -11,7 +11,7 @@ public:
     {
     }
 
-    virtual void showCurrentTest();
+    virtual void showCurrentTest() override;
 
     virtual void onEnter() override;
     virtual std::string title() const;
@@ -27,7 +27,7 @@ public:
     {
     }
 
-    virtual void performTests();
+    virtual void performTests() override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     void performTestsPNG(const char* filename);

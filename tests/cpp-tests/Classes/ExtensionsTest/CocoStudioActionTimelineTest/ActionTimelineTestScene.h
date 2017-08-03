@@ -53,17 +53,17 @@ protected:
 class TestActionTimeline : public ActionTimelineTestLayer
 {
 public:
-    virtual void onEnter();
+    virtual void onEnter() override;
     virtual std::string title() const override;
 };
 
 class TestChangePlaySection : public ActionTimelineTestLayer
 {
 public:
-    virtual void onEnter();
+    virtual void onEnter() override;
     virtual std::string title() const override;
 
-	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 
 protected:
     ActionTimeline* action;
@@ -72,7 +72,7 @@ protected:
 class TestTimelineFrameEvent : public ActionTimelineTestLayer
 {
 public:
-    virtual void onEnter();
+    virtual void onEnter() override;
     virtual std::string title() const override;
 
     void onFrameEvent(Frame* frame);
@@ -81,7 +81,7 @@ public:
 class TestTimelinePerformance : public ActionTimelineTestLayer
 {
 public:
-    virtual void onEnter();
+    virtual void onEnter() override;
     virtual std::string title() const override;
 };
 

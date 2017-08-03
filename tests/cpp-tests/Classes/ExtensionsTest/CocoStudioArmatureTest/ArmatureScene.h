@@ -77,7 +77,7 @@ public:
 	virtual void onEnter() override;
 	virtual std::string title() const override;
 	virtual std::string subtitle() const override;
-    virtual void restartCallback(Ref* pSender);
+    virtual void restartCallback(Ref* pSender) override;
 
 	void dataLoaded(float percent);
 };
@@ -131,8 +131,8 @@ class TestPerformanceBatchNode : public TestPerformance
 {
     virtual void onEnter() override;
     virtual std::string title() const override;
-    virtual void addArmatureToParent(cocostudio::Armature *armature);
-    virtual void removeArmatureFromParent(int tag);
+    virtual void addArmatureToParent(cocostudio::Armature *armature) override;
+    virtual void removeArmatureFromParent(int tag) override;
 
     cocostudio::BatchNode *batchNode;
 };
@@ -179,7 +179,7 @@ class TestUseMutiplePicture : public ArmatureTestLayer
 	virtual void onExit() override;
 	virtual std::string title() const override;
 	virtual std::string subtitle() const override;
-	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 
 	int displayIndex;
 	cocostudio::Armature *armature;
@@ -191,7 +191,7 @@ class TestParticleDisplay : public ArmatureTestLayer
 	virtual void onExit() override;
 	virtual std::string title() const override;
 	virtual std::string subtitle() const override;
-	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 
 	int animationID;
 	cocostudio::Armature *armature;
@@ -270,7 +270,7 @@ public:
     
     virtual void onEnter() override;
     virtual std::string title() const override;
-    virtual void update(float delta);
+    virtual void update(float delta) override;
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
     
     void onFrameEvent(cocostudio::Bone *bone, const std::string& evt, int originFrameIndex, int currentFrameIndex);
@@ -315,7 +315,7 @@ public:
 	virtual void onEnter() override;
 	virtual void onExit() override;
 	virtual std::string title() const override;
-	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 
 	cocostudio::Armature *armature;
 	int weaponIndex;
@@ -341,7 +341,7 @@ public:
     virtual void onExit() override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 
     void changeMountCallback(Ref* pSender);
     virtual cocostudio::Armature *createMount(const char *name, Vec2 position);
@@ -373,7 +373,7 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
     void updateSubTitle();
 
     int animationID;
@@ -388,7 +388,7 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
 };
 
 
@@ -396,11 +396,11 @@ public:
 class TestLoadFromBinary : public ArmatureTestLayer
 {
 public:
-	virtual void onEnter();
+	virtual void onEnter() override;
     virtual std::string title() const override;
 	virtual std::string subtitle() const override;
     
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
     
     
 	void dataLoaded(float percent);

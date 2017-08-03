@@ -60,7 +60,7 @@ CC_CONSTRUCTOR_ACCESS:
     {
         
     }
-    virtual bool init();
+    virtual bool init() override;
     
 protected:
     struct V3F_C4B

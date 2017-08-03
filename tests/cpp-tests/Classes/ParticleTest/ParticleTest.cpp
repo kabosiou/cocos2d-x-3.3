@@ -1383,7 +1383,7 @@ void ParticleReorder::reorderParticles(float dt)
 class RainbowEffect : public ParticleSystemQuad
 {
 public:
-    bool init();
+    bool init() override;
     virtual bool initWithTotalParticles(int numberOfParticles) override;
     virtual void update(float dt) override;
 };
